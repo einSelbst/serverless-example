@@ -1,4 +1,5 @@
 const slsw = require("serverless-webpack");
+const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
@@ -8,7 +9,11 @@ module.exports = {
   devtool: "source-map",
   // Since 'aws-sdk' is not compatible with webpack,
   // we exclude all node dependencies
-  externals: [nodeExternals()],
+  externals: [
+    nodeExternals({
+      modulesFromFile: true
+    })
+  ],
   mode: slsw.lib.webpack.isLocal ? "development" : "production",
   optimization: {
     // We do not want to minimize our code.
@@ -28,5 +33,10 @@ module.exports = {
         exclude: /node_modules/
       }
     ]
+  },
+  output: {
+    libraryTarget: "commonjs",
+    path: path.join(__dirname, ".webpack"),
+    filename: "[name].js"
   }
 };

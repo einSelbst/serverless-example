@@ -1,4 +1,4 @@
-import uuid from "uuid";
+import sharp from "sharp";
 
 const done = body => {
   return {
@@ -16,7 +16,7 @@ const fail = body => {
 
 export const ping = async (e, ctx, callback) => {
   try {
-    callback(null, done({ pong: "pong", id: uuid.v1() }));
+    callback(null, done({ pong: process.env.EXAMPLE }));
   } catch (e) {
     callback(fail(e));
   }

@@ -8,6 +8,23 @@ custom:
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
+    packager: 'yarn'
+
+package:
+  include:
+    - src/**
+    - node_modules/**
+  exclude:
+    - .git/**
+    - .env
+    - docker-compose.yml
+    - Dockerfile
+    - LICENSE
+    - README.md
+    - package.json
+    - package-lock.json
+    - tests/**
+    - yarn.lock
 
 provider:
   name: aws
