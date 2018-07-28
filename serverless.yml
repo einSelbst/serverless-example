@@ -1,4 +1,4 @@
-service: SERVICE-NAME
+ service: SERVICE-NAME
 # plugin to transpile ES6
 plugins:
   - serverless-webpack
@@ -41,4 +41,4 @@ functions:
           path: ping
           method: get
           cors: true
-           # authorizer: 
+           # authorizer:
