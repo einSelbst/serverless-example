@@ -1,6 +1,5 @@
-service: SERVICE-NAME
+service: ${file(config.json):name}
 
-# plugin to transpile ES6
 plugins:
   - serverless-webpack
   - serverless-offline

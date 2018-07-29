@@ -1,5 +1,5 @@
 {
-  "name": "lambda-image-sharp",
+  "name": "serverless-image-resizer",
   "provider": {
     "profile": "default",
     "stage": "dev",
@@ -12,7 +12,7 @@
   "s3": {
     "params": {
       "Metadata": {
-        "generator": "created by a lambda-image-sharp lambda function"
+        "generator": "created by a serverless-image-resizer lambda function"
       }
     }
   }
