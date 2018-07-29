@@ -1,4 +1,5 @@
- service: SERVICE-NAME
+service: SERVICE-NAME
+
 # plugin to transpile ES6
 plugins:
   - serverless-webpack
@@ -7,7 +8,11 @@ plugins:
 custom:
   webpack:
     webpackConfig: ./webpack.config.js
-    includeModules: true
+    # includeModules: true
+    includeModules:
+      forceExclude:
+        - aws-sdk
+        - serverless
     packager: 'yarn'
 
 package:
@@ -30,7 +35,7 @@ provider:
   name: aws
   runtime: nodejs8.10
   stage: dev
-  region: eu-west-2
+  region: eu-central-1
   environment: ${file(env.yml):${self:provider.stage}}
   iamRoleStatements:
     -  Effect: "Allow"
