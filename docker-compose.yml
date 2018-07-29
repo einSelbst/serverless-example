@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   deploy:
@@ -14,6 +14,5 @@ services:
       - "STAGE=dev"
     command: >
              sh -c '
-             serverless deploy
+             serverless deploy -v --aws-s3-accelerate
              '
-
