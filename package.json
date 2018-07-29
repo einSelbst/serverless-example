@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "deploy": "docker-compose run deploy",
-    "logs": "serverless logs -f sharpImage -t"
+    "logs": "serverless logs -f resizeImage -t"
   },
   "author": "Marco Lüthy, Jaikant Kumaran, Daniel Rafaj, Silvio Hädrich, Tom Nick",
   "license": "MIT",

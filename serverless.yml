@@ -72,7 +72,7 @@ provider:
               - "*"
 
 functions:
-  sharpImage:
+  resizeImage:
     description: Resizes images
     memorySize: 1024
     timeout: 30

@@ -86,7 +86,7 @@ You can also try out the service by invoking it. First deploy it with `yarn run 
 To run a function on your local machine:
 
 ``` bash
-$ serverless invoke local --function sharpImage
+$ serverless invoke local --function resizeImage
 ```
 
 To simulate API Gateway locally using [serverless-offline](https://github.com/dherault/serverless-offline)
@@ -108,7 +108,7 @@ This will call `docker-compose run deploy`.
 Deploy a single function:
 
 ``` bash
-$ serverless deploy function --function sharpImage
+$ serverless deploy function --function resizeImage
 ```
 
 Delete project deployment (stack & lambda functions)
