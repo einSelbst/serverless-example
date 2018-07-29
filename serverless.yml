@@ -7,7 +7,6 @@ plugins:
 custom:
   webpack:
     webpackConfig: ./webpack.config.js
-    # includeModules: true
     includeModules:
       forceExclude:
         - aws-sdk
@@ -78,11 +77,3 @@ functions:
     memorySize: 1024
     timeout: 30
     handler: handler.processImage
-  ping:
-    handler: handler.ping
-    events:
-      - http:
-          path: ping
-          method: get
-          cors: true
-           # authorizer:
