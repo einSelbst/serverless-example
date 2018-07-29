@@ -1,17 +1,25 @@
 {
-  "name": "notes-app-api",
-  "version": "1.1.0",
-  "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
+  "name": "serverless-image-resizer",
+  "version": "1.2.0",
+  "description": "Serverless-based Lambda function to resize images based on S3 events with the awesome Sharp library",
   "main": "handler.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "",
+  "author": "Marco Lüthy, Jaikant Kumaran, Daniel Rafaj, Silvio Hädrich, Tom Nick",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnomalyInnovations/serverless-nodejs-starter.git"
+    "url": "https://github.com/einselbst/serverless-image-resizer.git"
   },
+  "keywords": [
+    "serverless",
+    "sharp",
+    "libvips",
+    "image",
+    "resize",
+    "optimize"
+  ],
   "devDependencies": {
     "aws-sdk": "^2.235.1",
     "babel-core": "^6.26.3",
