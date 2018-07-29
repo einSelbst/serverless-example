@@ -1,0 +1,19 @@
+{
+  "name": "lambda-image-sharp",
+  "provider": {
+    "profile": "default",
+    "stage": "dev",
+    "region": "eu-central-1"
+  },
+  "sourceBucket": "visualpedia-staging-uploads",
+  "sourcePrefix": "",
+  "destinationBucket": "visualpedia-staging-images",
+  "destinationPrefix": "",
+  "s3": {
+    "params": {
+      "Metadata": {
+        "generator": "created by a lambda-image-sharp lambda function"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "all": [
+    ["rotate"],
+    ["toFormat", "jpeg", { "quality": 80 }]
+  ],
+  "key": "%(filename)s-%(sz)s.jpg",
+  "params": {
+    "ACL": "public-read"
+  },
+  "output" : {
+    "default" : {
+       "outputdir": ""
+    }
+  },
+  "operations": [
+    ["resize"],
+    ["max"],
+    ["withoutEnlargement"]
+  ]
+}
