@@ -18,6 +18,5 @@ jspm_packages
 Session.vim
 .webpack
 .serverless
-env.yml
 .env
 .idea

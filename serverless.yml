@@ -34,7 +34,6 @@ provider:
   runtime: nodejs8.10
   stage: dev
   region: eu-central-1
-  environment: ${file(env.yml):${self:provider.stage}}
   iamRoleStatements:
     -  Effect: "Allow"
        Action:
