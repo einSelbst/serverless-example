@@ -67,7 +67,7 @@ export AWS_SECRET_ACCESS_KEY=<your-secret-key-here>
 ### Buckets
 
 The buckets must exist. They need to be set in the `config.json` file.
-When the project is deployed, the S3 trigger needs to be manually set in the AWS Lambda console: `Configuration -> Add triggers -> S3 -> Choose correct source bucket -> Add -> Save`
+When the project is deployed, the S3 trigger needs to be manually set in the AWS Lambda console: `Configuration -> Add triggers -> S3 -> Choose correct source bucket -> Add -> Save`. While there is a [plugin](https://github.com/matt-filion/serverless-external-s3-event) for this it doesn't seem to be very mature, so it's not included yet.
 
 ## Testing
 
