@@ -119,10 +119,10 @@ Deploy a single function:
 $ serverless deploy function --function resizeImage
 ```
 
-Delete project deployment (stack & lambda functions)
+Delete project deployment (stack & lambda functions), pass the Stage which should be destroyed (dev/production).
 
 ``` bash
-$ serverless remove
+$ serverless remove --STAGE dev
 ```
 
 ## Logs
