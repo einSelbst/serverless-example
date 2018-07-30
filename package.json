@@ -5,8 +5,10 @@
   "main": "handler.js",
   "scripts": {
     "test": "jest",
+    "deploy-dev": "docker-compose run deploy-dev",
     "deploy": "docker-compose run deploy",
-    "logs": "serverless logs -f resizeImage -t"
+    "logs-dev": "serverless logs -f resizeImage -t --STAGE dev",
+    "logs": "serverless logs -f resizeImage -t --STAGE production"
   },
   "author": "Marco Lüthy, Jaikant Kumaran, Daniel Rafaj, Silvio Hädrich, Tom Nick",
   "license": "MIT",

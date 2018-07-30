@@ -6,12 +6,11 @@ plugins:
 
 custom:
   webpack:
-    webpackConfig: ./webpack.config.js
     includeModules:
       forceExclude:
         - aws-sdk
         - serverless
-    packager: 'yarn'
+    packager: "yarn"
 
 package:
   include:
@@ -32,8 +31,10 @@ package:
 provider:
   name: aws
   runtime: nodejs8.10
-  stage: dev
+  stage: ${opt:STAGE}
   region: eu-central-1
+  environment: # Service wide environment variables
+    STAGE: ${opt:STAGE}
   iamRoleStatements:
     -  Effect: "Allow"
        Action:
@@ -44,9 +45,9 @@ provider:
          Fn::Join:
            - ""
            -  - "arn:aws:s3:::"
-              - ${file(config.json):sourceBucket}
+              - ${file(config.json):${opt:STAGE}.sourceBucket}
               - "/"
-              - ${file(config.json):sourcePrefix}
+              - ${file(config.json):${opt:STAGE}.sourcePrefix}
               - "*"
     -  Effect: "Allow"
        Action:
@@ -65,9 +66,9 @@ provider:
          Fn::Join:
            - ""
            -  - "arn:aws:s3:::"
-              - ${file(config.json):destinationBucket}
+              - ${file(config.json):${opt:STAGE}.destinationBucket}
               - "/"
-              - ${file(config.json):destinationPrefix}
+              - ${file(config.json):${opt:STAGE}.destinationPrefix}
               - "*"
 
 functions:

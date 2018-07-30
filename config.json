@@ -1,19 +1,25 @@
 {
   "name": "serverless-image-resizer",
   "provider": {
-    "profile": "default",
-    "stage": "dev",
     "region": "eu-central-1"
   },
-  "sourceBucket": "visualpedia-staging-uploads",
-  "sourcePrefix": "",
-  "destinationBucket": "visualpedia-staging-images",
-  "destinationPrefix": "",
   "s3": {
     "params": {
       "Metadata": {
         "generator": "created by a serverless-image-resizer lambda function"
       }
     }
+  },
+  "dev": {
+    "sourceBucket": "visualpedia-staging-uploads",
+    "sourcePrefix": "",
+    "destinationBucket": "visualpedia-staging-images",
+    "destinationPrefix": ""
+  },
+  "production": {
+    "sourceBucket": "visualpedia-uploads",
+    "sourcePrefix": "",
+    "destinationBucket": "visualpedia-images",
+    "destinationPrefix": ""
   }
 }

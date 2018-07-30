@@ -97,7 +97,15 @@ $ serverless offline start
 
 ## Deployment
 
-Deploy your project:
+Deploy project to staging:
+
+``` bash
+$ yarn deploy-dev
+```
+
+This will call `docker-compose run deploy-dev`.
+
+Deploy project to production:
 
 ``` bash
 $ yarn deploy
@@ -119,7 +127,13 @@ $ serverless remove
 
 ## Logs
 
-Prints the tailing logs to the console:
+Prints the tailing logs for staging to the console:
+
+``` bash
+$ yarn logs-dev
+```
+
+Prints the tailing logs for production to the console:
 
 ``` bash
 $ yarn logs

@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  deploy:
+  deploy: &default
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,8 +11,13 @@ services:
     environment:
       - "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}"
       - "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
-      - "STAGE=dev"
     command: >
              sh -c '
-             serverless deploy -v --aws-s3-accelerate
+             serverless deploy -v --STAGE production --aws-s3-accelerate
+             '
+  deploy-dev:
+    <<: *default
+    command: >
+             sh -c '
+             serverless deploy -v --STAGE dev --aws-s3-accelerate
              '

@@ -4,13 +4,14 @@ import { config } from './config'
 import { rejects } from 'assert';
 
 const defaultParams = (config.s3 && config.s3.params) || {}
+const stage = process.env.STAGE
 
 export const sourceBucket = new AWS.S3({
-  params: { Bucket: config.sourceBucket },
+  params: { Bucket: config[stage].sourceBucket },
 })
 
 export const destinationBucket = new AWS.S3({
-  params: { Bucket: config.destinationBucket },
+  params: { Bucket: config[stage].destinationBucket },
 })
 
 export function get (params = {}, bucket = sourceBucket) {
